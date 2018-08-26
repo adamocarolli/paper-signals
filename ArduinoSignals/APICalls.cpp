@@ -669,6 +669,9 @@ void PaperSignals::StockExecution(String JSONData)
 
 void PaperSignals::CustomExecution(String JSONData)
 {
+  //Only poll the github API if a new github has been requested or it has been more than 2 minutes
+  if(throttleGithubAPI()) return;
+
   DynamicJsonBuffer customIntentBuffer;
   JsonObject& customIntentRoot = customIntentBuffer.parseObject(JSONData);
   String customIntentData = customIntentRoot["parameters"]["customParameter"];
