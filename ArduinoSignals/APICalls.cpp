@@ -676,6 +676,11 @@ void PaperSignals::CustomExecution(String JSONData)
   JsonObject& customIntentRoot = customIntentBuffer.parseObject(JSONData);
   String customIntentData = customIntentRoot["parameters"]["customParameter"];
 
+  char*  githubHost = "launchlibrary.net";
+  String githubURL = "/1.2/launch/next/1";
+  String rocketPayload = getJson(githubHost, githubURL);
+  Serial.println(githubPayload);
+
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
 }
 
