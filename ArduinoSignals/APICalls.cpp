@@ -678,7 +678,7 @@ void PaperSignals::CustomExecution(String JSONData)
 
   char*  githubHost = "https://api.github.com";
   String githubURL = "/repos/adamocarolli/paper-signals/commits";
-  String rocketPayload = getJson(githubHost, githubURL);
+  String githubPayload = getJson(githubHost, githubURL);
   Serial.println(githubPayload);
 
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
