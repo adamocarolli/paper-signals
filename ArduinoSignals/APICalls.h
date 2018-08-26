@@ -59,8 +59,8 @@ limitations under the License.
 #define STRETCHBREAK_NOT_YET 90
 
 // Test Signal
-#define TEST_FIRST_POSITION 10
-#define TEST_SECOND_POSITION 170
+#define TEST_FIRST_POSITION 0
+#define TEST_SECOND_POSITION 65
 #define TEST_NUM_SWINGS 5
 
 class PaperSignals
