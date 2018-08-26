@@ -86,7 +86,7 @@ public:
 	String CountdownType = "Countdown";
 	String TestSignalType = "TestSignal";
 	String StockType = "Stock";
-	String CustomIntentType = "GithubSignal";
+	String CustomIntentType = "Github";
 
 	String currentIntent = "";
 	String currentIntentTimeStamp = "";
