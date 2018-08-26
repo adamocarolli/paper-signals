@@ -818,7 +818,7 @@ String PaperSignals::getJsonHTTP(String host, String url){
 
     Serial.print("[HTTP] begin...\n");
 
-    http.begin("https://"+host+url); //HTTP
+    http.begin("http://"+host+url); //HTTP
 
     Serial.print("[HTTP] GET...\n");
     // start connection and send HTTP header
