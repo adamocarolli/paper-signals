@@ -830,9 +830,9 @@ String PaperSignals::getJsonHTTP(String host, String url){
         Serial.printf("[HTTP] GET... code: %d\n", httpCode);
 
         // file found at server
-        if(httpCode == HTTP_CODE_OK) {
+        // if(httpCode == HTTP_CODE_OK ) {
             payload = http.getString();
-        }
+        // }
     } else {
         Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
     }
