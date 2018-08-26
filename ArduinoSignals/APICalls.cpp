@@ -621,7 +621,6 @@ void PaperSignals::CountdownExecution(String JSONData)
 
 void PaperSignals::TestSignalExecution(String JSONData)
 {
-  Serial.println("ADAM: This is a test log ");
   if(numTestServoSwings < TEST_NUM_SWINGS)
   {
     MoveServoToPosition(TEST_FIRST_POSITION, 10);
@@ -677,12 +676,10 @@ void PaperSignals::CustomExecution(String JSONData)
   JsonObject& customIntentRoot = customIntentBuffer.parseObject(JSONData);
   String customIntentData = customIntentRoot["parameters"]["customParameter"];
 
-  char*  githubHost = "https://api.github.com";
+  char*  githubHost = "api.github.com";
   String githubURL = "/repos/adamocarolli/paper-signals/commits";
   String githubPayload = getJson(githubHost, githubURL);
   Serial.println(githubPayload);
-
-  MoveServoToPosition(ROCKET_LAUNCH, 10);
 
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
 }
