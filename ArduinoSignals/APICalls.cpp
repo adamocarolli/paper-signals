@@ -621,6 +621,7 @@ void PaperSignals::CountdownExecution(String JSONData)
 
 void PaperSignals::TestSignalExecution(String JSONData)
 {
+  Serial.println("ADAM: This is a test log ");
   if(numTestServoSwings < TEST_NUM_SWINGS)
   {
     MoveServoToPosition(TEST_FIRST_POSITION, 10);
