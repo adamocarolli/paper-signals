@@ -15,13 +15,13 @@ limitations under the License.
 */
 
 /* WiFi Network must be 2.4GHz */
-const String SSID = "YOUR_WIFI_NETWORK"; 
-const String Password = "YOUR_WIFI_PASSWORD";
+const String SSID = "Saffron City Gym"; 
+const String Password = "zapdos forever ";
 
 /* Your Signal ID should be lowercase, and each word should be separated by dashes. 
 If Google Assistant spoke too quickly, you can ask to repeat the identifier at any 
 time be saying "What is the setup code for [SIGNAL NAME]?" */
-const String SignalID = "your-signal-id";
+const String SignalID = "lovingly-piquant-yak";
 
 /* Enter the below API keys to track the weather on Umbrella Signal and Pants Signal. */
 const String DarkSkyAPIKey = "YOUR_DARK_SKY_API_KEY";
@@ -29,4 +29,3 @@ const String GeoCodingAPiKey = "YOUR_GEOCODING_API_KEY";
 
 /* Enter the below API key to track stocks on Arrow Signal. */
 const String BarChartAPIKey = "YOUR_BAR_CHART_API_KEY";
-
