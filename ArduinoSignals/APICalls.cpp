@@ -322,6 +322,15 @@ bool PaperSignals::throttleStockAPI()
   return false;
 }
 
+bool PaperSignals::throttleGithubAPI()
+{
+  if(millis() < lastGithubCall) lastGithubCall = 0; // Reset every 49 days
+
+  if(!updatedIntentTimeStamp && millis() - lastGithubCall < timeBetweenGithubCalls) return true;
+  lastGithubCall = millis();
+  return false;
+}
+
 void PaperSignals::ShortsOrPantsExecution(String JSONData)
 {
   //Only poll the weather API if a new location has been requested or it has been more than 2 minutes

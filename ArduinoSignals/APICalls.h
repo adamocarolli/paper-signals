@@ -92,6 +92,10 @@ public:
 	String currentIntentTimeStamp = "";
 	bool updatedIntentTimeStamp = true;
 
+	unsigned long lastGithubCall = 0;
+	unsigned long timeBetweenGithubCalls = 120000;
+	bool throttleGithubAPI();
+
 	unsigned long lastWeatherCall = 0;
 	unsigned long timeBetweenWeatherCalls = 120000;
 	bool throttleWeatherAPI();
