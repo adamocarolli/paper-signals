@@ -681,6 +681,8 @@ void PaperSignals::CustomExecution(String JSONData)
   String githubPayload = getJson(githubHost, githubURL);
   Serial.println(githubPayload);
 
+  MoveServoToPosition(ROCKET_LAUNCH, 10);
+
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
 }
 
