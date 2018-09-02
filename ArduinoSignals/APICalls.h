@@ -93,7 +93,7 @@ public:
 	bool updatedIntentTimeStamp = true;
 
 	unsigned long lastGithubCall = 0;
-	unsigned long timeBetweenGithubCalls = 120000;
+	unsigned long timeBetweenGithubCalls = 10000;
 	bool throttleGithubAPI();
 
 	unsigned long lastWeatherCall = 0;
@@ -128,6 +128,7 @@ public:
 
 	double GetBitcoin();
 	double GetEthereum();
+  String GetGithub();
 
 	void MoveServoToPosition(int position, int speed);
 
