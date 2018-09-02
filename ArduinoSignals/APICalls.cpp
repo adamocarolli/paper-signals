@@ -701,6 +701,10 @@ void PaperSignals::CustomExecution(String JSONData)
   if (prevGithubSha != sha) {
     Serial.print("SHA has been updated: "); Serial.println(sha);
     prevGithubSha = sha;
+
+    // Launch rocket!    
+    MoveServoToPosition(ROCKET_LAUNCH, 10);
+    MoveServoToPosition(ROCKET_NOT_LAUNCHED, 10);
   } else {
     Serial.print("SHA stayed the same: "); Serial.println(sha);
   }
