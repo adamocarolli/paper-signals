@@ -92,6 +92,8 @@ public:
 	String currentIntentTimeStamp = "";
 	bool updatedIntentTimeStamp = true;
 
+ String prevGithubSha = "";
+
 	unsigned long lastGithubCall = 0;
 	unsigned long timeBetweenGithubCalls = 10000;
 	bool throttleGithubAPI();

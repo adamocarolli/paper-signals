@@ -697,8 +697,13 @@ void PaperSignals::CustomExecution(String JSONData)
   String customIntentData = customIntentRoot["parameters"]["customParameter"];
 
   String sha = GetGithub();
-  
-  Serial.print("GitHub Payload SHA: "); Serial.println(sha);
+
+  if (prevGithubSha != sha) {
+    Serial.print("SHA has been updated: "); Serial.println(sha);
+    prevGithubSha = sha;
+  } else {
+    Serial.print("SHA stayed the same: "); Serial.println(sha);
+  }
 
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
 }
