@@ -676,10 +676,23 @@ void PaperSignals::CustomExecution(String JSONData)
   JsonObject& customIntentRoot = customIntentBuffer.parseObject(JSONData);
   String customIntentData = customIntentRoot["parameters"]["customParameter"];
 
-  char*  githubHost = "api.github.com";
-  String githubURL = "/repos/adamocarolli/paper-signals/commits";
-  String githubPayload = getJsonHTTP(githubHost, githubURL);
-  Serial.print("GitHub Payload: "); Serial.println(githubPayload);
+  char*  host = "github-tunnel.herokuapp.com";
+  String url = "/repos/adamocarolli/paper-signals/commits";
+  String payload = getJson(host, url);
+
+  String unPretty = makeLessPrettyJSON(payload);
+
+  DynamicJsonBuffer jsonBuffer;
+  JsonObject& root = jsonBuffer.parseObject(unPretty);
+
+  // Test if parsing succeeds.
+  if (!root.success()) {
+    Serial.println("parseObject() failed");
+  }
+
+  String sha = root[String("sha")];
+  
+  Serial.print("GitHub Payload SHA: "); Serial.println(sha);
 
   Serial.print("Current Custom Parameter Data: "); Serial.println(customIntentData);
 }
